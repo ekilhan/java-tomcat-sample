@@ -22,7 +22,7 @@ pipeline {
                 deploy adapters: [tomcat9(
                     credentialsId: 'tomcat',
                     path: '',
-                    url: 'http://<staging-ip>:8080'
+                    url: 'http://98.93.105.183:8080'
                 )],
                 contextPath: '/',
                 war: '**/*.war'
@@ -38,7 +38,7 @@ pipeline {
                 deploy adapters: [tomcat9(
                     credentialsId: 'tomcat',
                     path: '',
-                    url: 'http://<prod-ip>:8080'
+                    url: 'http://13.217.56.201:8080/'
                 )],
                 contextPath: '/',
                 war: '**/*.war'
