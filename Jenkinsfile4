@@ -20,9 +20,9 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 deploy adapters: [tomcat9(
-                    credentialsId: '714b5cf8-a90d-4fd2-bfe5-886564e1f324',
+                    credentialsId: 'xxxxxx',
                     path: '',
-                    url: 'http://98.93.105.183:8080'
+                    url: 'http://<staging-ip>:8080'
                 )],
                 contextPath: '/',
                 war: '**/*.war'
@@ -36,9 +36,9 @@ pipeline {
                 }
 
                 deploy adapters: [tomcat9(
-                    credentialsId: '714b5cf8-a90d-4fd2-bfe5-886564e1f324',
+                    credentialsId: 'xxxxxx',
                     path: '',
-                    url: 'http://13.217.56.201:8080'
+                    url: 'http://<prod-ip>:8080'
                 )],
                 contextPath: '/',
                 war: '**/*.war'
