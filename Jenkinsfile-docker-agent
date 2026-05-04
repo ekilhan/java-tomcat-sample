@@ -1,13 +1,15 @@
 pipeline {
     agent {
-            docker { image 'maven:3.9.12-amazoncorretto-21-alpine' }
-            label 'linux' 
+        docker {
+            image 'maven:3.9.12-amazoncorretto-21-alpine'
+            label 'linux'
         }
-        stages {
-            stage('Build Application') {
-                steps {
-                    sh 'mvn clean package'
-                }
+    }
+    stages {
+        stage('Build Application') {
+            steps {
+                sh 'mvn clean package'
+            }
             post {
                 success {
                     echo "Now Archiving the Artifacts....."
